@@ -12,8 +12,9 @@ test('tree.objectMap(key:b, 2)', function(t) {
   t.plan(4);
 
   var tree = Object.assign({ }, defTree, { 
-    data: { a: 'aaa', b: 'bbb', c: 'ccc' }, 
-    attrs: { }
+    attrs: {
+      data: { a: 'aaa', b: 'bbb', c: 'ccc' }
+    }
   });
 
   var res = objectMap.call(tree, 'b', 1);

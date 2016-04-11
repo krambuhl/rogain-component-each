@@ -11,9 +11,11 @@ const defTree = {
 test('tree.arrayMap(a, 0) :: with attrs.as', function(t) {
   t.plan(4);
 
-  var tree = Object.assign({ }, defTree, { 
-    data: ['a', 'b', 'c'], 
-    attrs: { as: 'letter' }
+  var tree = Object.assign({ }, defTree, {  
+    attrs: { 
+      data: ['a', 'b', 'c'],
+      as: 'letter' 
+    }
   });
 
   var res = arrayMap.call(tree, 'b', 1);

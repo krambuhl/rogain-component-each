@@ -12,8 +12,7 @@ test('<Each data={undefined}><div /></Each>', function(t) {
   t.plan(1);
 
   var tree = Object.assign({ }, defTree, { 
-    data: undefined, 
-    attrs: { }
+    attrs: { data: undefined }
   });
 
   var res = Each(tree);
@@ -25,8 +24,7 @@ test('<Each data={emptyArray}><div /></Each>', function(t) {
   t.plan(1);
 
   var tree = Object.assign({ }, defTree, { 
-    data: [], 
-    attrs: { }
+    attrs: { data: [] }
   });
 
   var res = Each(tree);
@@ -38,8 +36,7 @@ test('<Each data={emptyObject}><div /></Each>', function(t) {
   t.plan(1);
 
   var tree = Object.assign({ }, defTree, { 
-    data: { }, 
-    attrs: { }
+    attrs: { data: { } }
   });
 
   var res = Each(tree);
@@ -51,8 +48,7 @@ test('<Each data={nonEmptyArray}><div /></Each>', function(t) {
   t.plan(11);
 
   var tree = Object.assign({ }, defTree, { 
-    data: ['a', 'b', 'c'], 
-    attrs: { }
+    attrs: { data: ['a', 'b', 'c'] }
   });
 
   var res = Each(tree);
@@ -77,8 +73,7 @@ test('<Each data={nonEmptyObject}><div /></Each>', function(t) {
   t.plan(13);
 
   var tree = Object.assign({ }, defTree, { 
-    data: { a: 'aaa', b: 'bbb', c: 'ccc' }, 
-    attrs: { }
+    attrs: { data: { a: 'aaa', b: 'bbb', c: 'ccc' } }
   });
 
   var res = Each(tree);
@@ -108,8 +103,7 @@ test('tree.arrayMap(a, 0) :: with attrs.as', function(t) {
   t.plan(4);
 
   var tree = Object.assign({ }, defTree, { 
-    data: ['a', 'b', 'c'], 
-    attrs: { as: 'letter' }
+    attrs: { as: 'letter', data: ['a', 'b', 'c'] }
   });
 
   var res = arrayMap.call(tree, 'b', 1);
@@ -126,8 +120,7 @@ test('tree.objectMap(key:b, 2)', function(t) {
   t.plan(4);
 
   var tree = Object.assign({ }, defTree, { 
-    data: { a: 'aaa', b: 'bbb', c: 'ccc' }, 
-    attrs: { }
+    attrs: { data: { a: 'aaa', b: 'bbb', c: 'ccc' } }
   });
 
   var res = objectMap.call(tree, 'b', 1);

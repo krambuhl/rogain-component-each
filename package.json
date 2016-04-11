@@ -1,6 +1,6 @@
 {
   "name": "rogain-component-each",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rogain <Each /> helper component",
   "main": "dist/index.js",
   "scripts": {
