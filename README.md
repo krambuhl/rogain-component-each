@@ -1,6 +1,6 @@
 # rogain-component-each
 
-Returns a tree of the `data` mapped to children.  Each child can access the current element with the `@item` (or `as` attribute) properties and the current index with `@index`.
+Returns a tree of the `data` mapped to children.  Each child can access the current element with the `@item` (or `as` attribute) properties and the current index with `@index` or `@key`.
 
 ```html
 <Each data={searchResults} as="result">
@@ -12,7 +12,7 @@ __Attributes__
 
 ___data___
 
-Variable. Array.
+Variable. Array or Object.
 
 ___as___
 

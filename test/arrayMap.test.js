@@ -1,25 +1,22 @@
-var test = require('tape');
-var arrayMap = require('../dist/arrayMap');
-
+const test = require('tape');
+const arrayMap = require('../dist/arrayMap');
 const defTree = {
   type: 'component',
   name: 'Each',
-  attrs: { },
+  attribs: { },
   children: [{ type: 'tag', name: 'div' }]
 };
 
-test('tree.arrayMap(a, 0) :: with attrs.as', function(t) {
-  t.plan(4);
-
-  var tree = Object.assign({ }, defTree, {  
-    attrs: { 
+test('tree.arrayMap(a, 0) :: with attribs.as', function(t) {
+  const tree = Object.assign({ }, defTree, {  
+    attribs: { 
       data: ['a', 'b', 'c'],
       as: 'letter' 
     }
   });
+  const res = arrayMap.call(tree, 'b', 1);
 
-  var res = arrayMap.call(tree, 'b', 1);
-
+  t.plan(4);
   t.equal(res.type, 'frame');
   t.equal(res.locals['@index'], 1);
   t.equal(res.locals['@length'], 3);
